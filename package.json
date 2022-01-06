@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "name": "nami-ui-monorepo",
+  "description": "Nami-ui mono-repo root package.json, used mainly to execute build scripts. This package is not published to npm.",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.19.0"
+  },
+  "engines": {
+    "node": ">= 10"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "npm run commitizenBranches --silent && commitlint -E HUSKY_GIT_PARAMS || true",
+      "prepare-commit-msg": "npm run commitizenBranches --silent && exec < /dev/tty && git cz --hook || true"
+    }
+  }
+}
