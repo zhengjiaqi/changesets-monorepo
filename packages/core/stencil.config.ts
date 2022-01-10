@@ -1,8 +1,17 @@
 import { Config } from '@stencil/core';
+import { JsonDocs } from '@stencil/core/internal';
+import { reactOutputTarget as react } from '@stencil/react-output-target';
 
 export const config: Config = {
-  namespace: 'stencil-components',
+  namespace: 'nami-ui',
+  // namespace: 'nami',
+  globalStyle: 'src/global/variables.css',
   outputTargets: [
+    react({
+      componentCorePackage: '@mtfe/nami-ui',
+      proxiesFile: '../react/src/components/stencil-generated/index.ts',
+      includeDefineCustomElements: true,
+    }),
     {
       type: 'dist',
       esmLoaderPath: '../loader',
@@ -12,10 +21,18 @@ export const config: Config = {
     },
     {
       type: 'docs-readme',
+      footer: '',
     },
     {
       type: 'www',
       serviceWorker: null, // disable service workers
     },
+    {
+      type: 'docs-custom',
+      generator: (docs: JsonDocs) => {
+          // Custom logic goes here
+          console.log('---docs---:', docs)
+      }
+    }
   ],
 };

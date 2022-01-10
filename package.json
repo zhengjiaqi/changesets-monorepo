@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "nami-ui-monorepo",
+  "name": "@mtfe/nami-ui-monorepo",
   "description": "Nami-ui mono-repo root package.json, used mainly to execute build scripts. This package is not published to npm.",
   "scripts": {
     "preinstall": "npx only-allow pnpm"
