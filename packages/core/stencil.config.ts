@@ -10,7 +10,9 @@ export const config: Config = {
     react({
       componentCorePackage: '@mtfe/nami-ui',
       proxiesFile: '../react/src/components/stencil-generated/index.ts',
-      includeDefineCustomElements: true,
+      includeImportCustomElements: true,
+      includePolyfills: false,
+      includeDefineCustomElements: false,
     }),
     {
       type: 'dist',
