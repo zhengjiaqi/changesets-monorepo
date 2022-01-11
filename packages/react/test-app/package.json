@@ -1,6 +1,6 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "react-test-app",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "@mtfe/nami-ui-react": "workspace:^0.0.1",

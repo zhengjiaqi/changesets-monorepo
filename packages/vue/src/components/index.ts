@@ -1,0 +1,2 @@
+
+export * from './stencil-generated';
